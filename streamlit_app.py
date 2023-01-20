@@ -7,7 +7,7 @@ model = AutoModelWithLMHead.from_pretrained("gpt2")
 tokenizer = AutoTokenizer.from_pretrained("gpt2")
 
 # Get user input data
-st.title('ChaGPT Imitation App')
+st.title('GPT-3 App')
 user_input = st.text_input('Enter your message:')
 data = [[user_input]]
 df = pd.DataFrame(data, columns = ['User Input'])
@@ -18,4 +18,4 @@ outputs = model.generate(input_ids)
 prediction = tokenizer.decode(outputs[0])
 
 # Display prediction to user
-st.write("ChaGPT's response:", prediction)
+st.write("GPT-3's response:", prediction)
